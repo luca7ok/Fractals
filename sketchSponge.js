@@ -1,11 +1,14 @@
 function setup()
 {
-	createCanvas(1650,900,WEBGL);
+	createCanvas(windowWidth,windowHeight,WEBGL);
 	noStroke();
 }
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+  }
 function draw()
 {
-	background(30);
+	background("#0e0e30");
 	rotateX(frameCount * 0.01);
   	rotateY(frameCount * 0.01);
   	lights();
@@ -17,7 +20,7 @@ function paint(len,it)
 {
 	if(it==MAX){
 		box(len*3);
-		return
+		return;
 	}
 	for (let x = -len; x <= +len; x += len) {
   		for (let y = -len; y <= +len; y += len) {

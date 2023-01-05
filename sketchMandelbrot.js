@@ -2,11 +2,14 @@ let INF = 10;
 let MAX = 100;
 
 function setup() {
-  createCanvas(700, 700);
+  let canvas=createCanvas(windowWidth/3, windowHeight/2);
+  canvas.position(windowWidth/3,windowHeight/7)
   pixelDensity(1);
   cursor(HAND);
 }
-
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 let cx = 0, cy = 0;
 let len = 5;
 
@@ -26,15 +29,15 @@ function draw() {
         if (a * a + b * b >= INF * INF) break;
       }
 
-      const pixel = (x + y * width) * 4;
+      const pixel = (x + y *width) *4;
       if (i === MAX) {
-        pixels[pixel + 0] = 0;
+        pixels[pixel] = 0;
         pixels[pixel + 1] = 0;
         pixels[pixel + 2] = 0;
       }
       else {
         const rgb = getRGB(floor(map(i, 0, MAX, 0, 1535)));
-        pixels[pixel + 0] = rgb[0];
+        pixels[pixel] = rgb[0];
         pixels[pixel + 1] = rgb[1];
         pixels[pixel + 2] = rgb[2];
       }
@@ -71,4 +74,4 @@ function keyPressed() {
     len = 5;
     loop();
   }
-}
+} 

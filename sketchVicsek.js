@@ -1,14 +1,17 @@
 function setup()
 {
-	createCanvas(1650,900);
+	createCanvas(windowWidth, windowHeight);
 	rectMode(CENTER);
 	noStroke();
 }
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+  }
 function draw()
 {
-	background(30);
+	background("#0e0e30");
 	fill(255);
-	paint(width/2,height/2,243,0);
+	paint(windowWidth/2,windowHeight/2,243,0);
 	noLoop();
 }
 function paint(cx,cy,len,it)

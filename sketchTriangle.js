@@ -9,8 +9,22 @@ let col=["#6942EF","#5F49F1","#5451F2", "#4A58F4","#3F60F5", "#3567F7", "#2A6EF9
 function draw() {
   background("#0e0e30");
   fill(0);
-  triangle(800, 7, 288, 893, 1312, 893);
-  paint(800, 7, 288, 893, 1312, 893, 1, 229.5);
+  var l=6*windowWidth/10;
+    var A={
+        x:windowWidth/2,
+        y:windowHeight-l*Math.sqrt(3)/2
+    };
+    var B={
+        x:2*windowWidth/10,
+        y:windowHeight-windowHeight/10
+    };
+   
+    var C={
+        x:windowWidth-2*windowWidth/10,
+        y:windowHeight-windowHeight/10
+    };
+  triangle(A.x, A.y, B.x, B.y, C.x, C.y);
+  paint(A.x, A.y, B.x, B.y, C.x,C.y, 1, 229.5);
   noLoop();
 }
 

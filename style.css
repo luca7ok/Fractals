@@ -3,6 +3,8 @@ body{
 	height: 100vh;
 	position: relative;
 	background: #0e0e30;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 

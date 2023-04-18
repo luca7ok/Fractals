@@ -2,6 +2,7 @@
        function setup() {
         createCanvas(windowWidth, windowHeight);
         angleMode(DEGREES);
+        smooth();
       }
       function windowResized() {
         resizeCanvas(windowWidth, windowHeight);

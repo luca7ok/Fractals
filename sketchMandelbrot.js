@@ -1,5 +1,5 @@
 let INF = 10;
-let MAX = 100;
+let MAX = 200;
 
 function setup() {
   let canvas=createCanvas(windowWidth/3, windowHeight/2);
@@ -12,7 +12,6 @@ function windowResized() {
 }
 let cx = 0, cy = 0;
 let len = 5;
-
 function draw() {
   loadPixels();
   for (let x = 0; x < width; x++) {
@@ -22,10 +21,10 @@ function draw() {
 
       let i = 0;
       for (let a = 0, b = 0; i < MAX; i++) {
-        const aNow = a * a - b * b + a0;
-        const bNow = 2 * a * b + b0;
-        a = aNow;
-        b = bNow;
+        const aNou = a * a - b * b + a0;
+        const bNou = 2 * a * b + b0;
+        a = aNou;
+        b = bNou;
         if (a * a + b * b >= INF * INF) break;
       }
 
